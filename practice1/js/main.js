@@ -3,7 +3,9 @@ var app = new Vue({
     data: {
         product: 'Socks',
         description: 'Warm fuzzy socks',
-        image: './img/socks.jpeg'
+        image: './img/socks.jpeg',
+        inventory: 0,
+        onSale: true,
     }
 })
 
