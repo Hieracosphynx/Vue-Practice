@@ -15,6 +15,20 @@ var app = new Vue({
                 variantId: 1235,
                 variantColor: "Black"
             }
+        ],
+        sizes: [
+            {
+                sizeId: 1444,
+                sizeNum: 9
+            },
+            {
+                sizeId: 1445,
+                sizeNum: 10
+            },
+            {
+                sizeId: 1446,
+                sizeNum: 10.5
+            }
         ]
         
     }
