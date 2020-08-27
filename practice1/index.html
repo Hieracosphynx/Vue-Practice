@@ -27,14 +27,14 @@
                     </div>
                     <div v-for="variant in variants" :key="variant.varaintId">
                         <ul>
-                            <li>{{ variant.variantColor }}</li>
+                            <li @mouseover="updateProduct(variant.variantImage)">{{ variant.variantColor }}</li>
                         </ul>
                     </div>
-                    <div v-for="size in sizes" :key="size.sizeId">
-                        <ul>
-                            <li>{{ size.sizeNum }}</li>
-                        </ul>
+                    <button v-on:click="addToCart">Add to cart</button>
+                    <div class="cart">
+                        <p>Cart {{ cart }}</p>
                     </div>
+                    <button id="warning-button" v-on:click="removeFromCart">Remove from cart</button>
                 </div>
             </div>
         </div>

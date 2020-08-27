@@ -22,6 +22,26 @@ body{
     flex-direction: column;
 }
 
+.cart{
+    border-style: solid;
+    text-align: center;
+    border-width: 1px;
+}
+
+#warning-button{
+    background: lightcoral;
+}
+
+button{
+    background: lightblue;
+    padding: 0;
+    margin: 0;
+    border: none;
+    height: 5vh;
+    overflow: visible;
+    color: purple;
+}
+
 img{
     width: 240px;
     height: auto;
