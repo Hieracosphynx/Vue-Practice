@@ -1,3 +1,17 @@
+Vue.component('product_details', {
+    props:{
+        details: {
+            type: Array,
+            required: true
+        }
+    },
+    template: `
+        <ul>
+            <li v-for="detail in details">{{ detail }}</li>
+        </ul>
+    `,
+})
+
 Vue.component('product', {
     props: {
         premium: {
@@ -12,9 +26,7 @@ Vue.component('product', {
     <div class="product-main">
         <div class="product-info">
             <h1>{{ title }}</h1>
-            <ul>
-                <li v-for="detail in details">{{ detail }}</li>
-            </ul>
+            <product_details :details="details"></product_details>
         </div>
         <p :class="{ onSale: onSale }" v-show="onSale">On Sale</p>
         <div class="product-instock">
