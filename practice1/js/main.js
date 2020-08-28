@@ -4,6 +4,7 @@ var app = new Vue({
         product: 'Socks',
         description: 'Warm fuzzy socks',
         image: './img/socks-gray.jpeg',
+        inStock: false,
         inventory: 0,
         details: ["80% cotton", "Water resistant", "Gender neutral"],
         variants: [
