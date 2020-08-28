@@ -1,10 +1,11 @@
 var app = new Vue({
     el: '#app',
     data: {
+        brand: 'MDLC',
         product: 'Socks',
         description: 'Warm fuzzy socks',
-        image: './img/socks-gray.jpeg',
-        inStock: false,
+        // image: './img/socks-gray.jpeg',
+        selectedVariant: 0,
         inventory: 0,
         details: ["80% cotton", "Water resistant", "Gender neutral"],
         variants: [
@@ -12,11 +13,15 @@ var app = new Vue({
                 variantId: 1234,
                 variantColor: "Gray",
                 variantImage: './img/socks-gray.jpeg',
+                variantQuantity: 10,
+                variantOnSale: true,
             },
             {
                 variantId: 1235,
                 variantColor: "Black",
                 variantImage: './img/socks-black.jpg',
+                variantQuantity: 0,
+                variantOnSale: false,
             }
         ],
         sizes: [
@@ -39,8 +44,11 @@ var app = new Vue({
         addToCart: function() {
             this.cart+=1
         },
-        updateProduct: function(variantImage){
-            this.image = variantImage
+
+        updateProduct: function(index){
+            this.selectedVariant = index
+            console.log(index)
+
         },
         
         removeFromCart: function(){
@@ -51,6 +59,24 @@ var app = new Vue({
                 this.cart-=1
             }
         }
-    }
+    },
+
+    computed: {
+        title(){
+            return this.brand + ' ' + this.product
+        },
+
+        image(){
+            return this.variants[this.selectedVariant].variantImage
+        },
+
+        inStock(){
+            return this.variants[this.selectedVariant].variantQuantity
+        },
+
+        onSale(){
+            return this.variants[this.selectedVariant].variantOnSale
+        }
+    },
 })
 
